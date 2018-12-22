@@ -1,0 +1,86 @@
+<br> <br>
+<div class="col-md-6 col-md-offset-2">
+  <h3> Calculator </h3>
+  <br>
+
+  <!-- <form [formGroup]="calcForm" (ngSubmit)="onSubmit()"> -->
+    <div class="form-group" >
+
+      <label for="num1">Enter number 1: </label>
+      <input type="number" class="form-control" name="firstNumber" [(ngModel)]="firstNumber"/>
+
+      <div *ngIf="submitted && calcForm.controls.number.errors" class="error">
+        <div class="text-danger" *ngIf="calcForm.controls.number.errors.required">
+          Number is required
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="num2">Enter number 2: </label>
+        <input type="number" class="form-control" name="secondNumber" [(ngModel)]="secondNumber" />
+  
+        <div *ngIf="submitted && calcForm.controls.number.errors" class="error">
+          <div class="text-danger" *ngIf="calcForm.controls.number.errors.required">
+            Number is required
+          </div>
+  
+  
+  
+        </div>
+  
+  
+      </div>
+    <div>
+
+      <button class="btn btn-primary" (click)="addition(firstNumber,secondNumber)"> Add </button> &nbsp;
+      <button class="btn btn-success" (click)="multiplication(firstNumber,secondNumber)"> Multiply </button> &nbsp;
+
+      <!-- <button class="btn btn-danger"> Reset </button> -->
+    </div>
+
+    <br> <br>
+    <div *ngIf="noNumber" class="error">
+        <div class="text-danger" >
+        Please enter a number bro
+        </div>
+</div>
+
+
+  <!-- </form> -->
+  <hr/>
+  <h3> Do you know? </h3> <br/>
+
+  Square root of 101 is {{101 | sqrt }} <br>
+  Square root of 49 is {{49 | sqrt }}
+  
+  <hr>
+  <h5 class="text-left"> System date:{{ todayDate | date: 'd/M/y'}}</h5>
+  <h5 class="text-left">System time:{{ todayDate | date: 'shortTime'}}</h5>
+
+  <hr>
+  <h5>JSON Data</h5>
+  <b>
+    {{cust | json }}
+  </b>
+  <br> <br>
+
+  <b>
+    Months: {{months | slice:2:6}} <br> <br> 
+  </b>
+
+<h5>salary is {{25000 | number:'5.2'}}</h5> 
+<h5>some percentage is {{00.45454 | percent}}</h5> 
+<h5>some currency is {{35000 | currency: "INR": true}}</h5> 
+
+<hr>
+<h3 changeText> </h3> 
+
+
+</div>

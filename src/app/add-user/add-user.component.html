@@ -1,0 +1,63 @@
+<br> <br>
+<div class="col-md-6 col-md-offset-2">
+  <h3> Add User </h3>
+  <br>
+
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+
+      <label for="firstName">First Name: </label>
+      <input type="text" class="form-control" formControlName="firstName" id="firstName" />
+
+      <div *ngIf="submitted && addForm.controls.firstName.errors" class="error">
+        <div class="text-danger" *ngIf="addForm.controls.firstName.errors.required">
+          First Name is required
+        </div>
+      </div>
+
+
+      <label for="lastName">Last Name: </label>
+      <input type="text" class="form-control" formControlName="lastName" id="lastName" />
+
+      <div *ngIf="submitted && addForm.controls.lastName.errors" class="error">
+        <div class="text-danger" *ngIf="addForm.controls.lastName.errors.required">
+          Last Name is required
+        </div>
+      </div>
+
+      <label for="email">Email Address: </label>
+      <input type="email" class="form-control" formControlName="email" id="email" />
+
+      <div *ngIf="submitted && addForm.controls.email.errors" class="error">
+        <div class="text-danger" *ngIf="addForm.controls.email.errors.required">
+          Email is required
+        </div>
+
+        <div class="text-danger" *ngIf="addForm.controls.email.errors.email">
+            Invalid Email
+          </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+<div>
+
+  <button class="btn btn-success"> Save</button> &nbsp;
+  <button class="btn btn-danger" type="reset"> Cancel</button> &nbsp;
+<a class="btn btn-warning" [routerLink]="['/list-user']"> Back to list </a>
+</div>
+
+
+
+</form>
+
+</div>

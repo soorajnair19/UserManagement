@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "users": [
+    {
+      "id": 2,
+      "firstName": "Sumit",
+      "lastName": "Sharma",
+      "email": "sumitsharma@gmail.com"
+    },
+    {
+      "id": 4,
+      "firstName": "Sooraj",
+      "lastName": "Sharma",
+      "email": "soorajsharma@gmail.com"
+    },
+    {
+      "id": 5,
+      "firstName": "Pranav",
+      "lastName": "Mishra",
+      "email": "pranavmishra@gmail.com"
+    }
+  ]
+}
